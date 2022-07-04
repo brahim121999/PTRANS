@@ -1,0 +1,235 @@
+\documentclass[a4paper, 11pt]{report}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[T1]{fontenc}
+\usepackage[absolute]{textpos}
+\usepackage{fancyhdr}
+\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[french]{babel}
+\usepackage{libertine}
+\usepackage[pdftex]{graphicx}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\newcommand{\hsp}{\hspace{20pt}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\begin{document}
+
+\begin{titlepage}
+  \begin{sffamily}
+  \begin{center}
+
+    % Upper part of the page. The '~' is needed because \\
+    % only works if a paragraph has started.
+    \includegraphics[scale=0.5]{images/polytech.png}~\\[0.5cm]
+    
+
+     \includegraphics[scale=0.5]{images/imedsys.eps}
+    \\[2cm]
+
+    \textsc{\Large Projet Transversal}\\[1.5cm]
+
+    % Title
+    \HRule \\[0.4cm]
+    { \huge \bfseries Compte Rendu du Brief\\[0.4cm] }
+
+    \HRule \\[2cm]
+   
+
+    % Author and supervisor
+    \begin{minipage}{0.4\textwidth}
+      \begin{flushleft} \large
+       Anthony \textsc{Doméon}\\
+       Théophane \textsc{Fouillard}\\
+       François \textsc{Gendre}\\
+       
+      \end{flushleft}
+    \end{minipage}
+    \begin{minipage}{0.4\textwidth}
+      \begin{flushright} \large
+        \emph{Tuteur :} M. Nicolas \textsc{Normand}\\
+        \emph{Tuteur en Entreprise : } M. Olivier \textsc{Brouard}
+      \end{flushright}
+    \end{minipage}
+
+    \vfill
+
+    % Bottom of the page
+    {\large 13 octobre 2020}
+
+  \end{center}
+  \end{sffamily}
+\end{titlepage}
+
+\pagestyle{fancy}
+
+\lhead{\includegraphics[width=3cm]{images/imedsys.eps}}
+\rhead{\includegraphics[width=3cm]{images/polytech.png}}
+
+
+\section*{Contexte général du projet}
+\subsection*{L'entreprise : Imedsys}
+Société créée en 2004, vend du matériel fixe ou mobile d'imagerie médicale et dentaire pour les vétérinaires. \\
+Revendeur / distributeur jusqu'en 2010, année à partir de laquelle Imedsys développe son propre logiciel d'imagerie ImedView. \\
+Le logiciel est connecté directement à un capteur plan et permet de faciliter de nombreuses tâches aux vétérinaires. \\
+La partie du logiciel qui concerne directement le P-Trans est celle des outils de mesure.
+Ces outils de mesures spécifiques sont mis à disposition des vétérinaires
+afin d'exploiter les radiologies (selon la zone étudiée). \\
+Cela aide le vétérinaire dans son diagnostic et dans sa recherche  certaines caractéristiques ou maladies chez l'animal, telles que la cardiomégalie ou la dysplasie. \\
+Le vétérinaire effectue ses mesures sur l'écran (à l'aide des outils spécifiques) puis peut statuer.
+
+\subsection*{Projet}
+Le logiciel imedview permet d'accéder à la fiche de l'animal. Il permet également une orientation de la prise d'image en fonction de la zone et par type d'examen. Cela permet de proposer un pré-paramétrage de la prise d'image aux vétérinaires. De plus, cet outil traite les images prises afin de faciliter les diagnostics. L'objectif de l'ensemble de ce P-trans est de rendre entièrement automatique la diagnostic de la cardiomégalie et de la dysplasie de la hanche chez les chiens et les chats, en utilisant les outils du logiciel et de l'Intelligence Artificielle (IA).
+
+\section*{Le besoin}
+La solution proposée permettra d'automatiser les diagnostics suivants : la cardiomégalie et la dysplasie.
+Elle devra donner l'indice vertébral de Buchanan facilitant le diagnostic de la Cardiomégalie chez le chat ou le chien.
+Elle permettra aussi de déterminer l'angle de Norberg-Olsson facilitant le diagnostic de la Dysplasie.
+
+
+\section*{Liste des besoins par ordre de priorité}
+\begin{itemize}
+%peut être détailler plus %
+\item Nous allons nous concentrer dans un premier temps sur le diagnostic de la cardiomégalie.
+\item Si nous pouvons le faire, nous nous pencherons sur le diagnostic de la dysplasie
+\end{itemize}
+
+
+\section*{Planning du projet}
+\subsection*{En général}
+\begin{itemize}
+	\item Trouver des bases de données existantes sur le net
+	\item Se renseigner sur les technologies existantes pour la reconnaissance de formes, d'os, etc.
+	\item Assimiler les bases théoriques de la reconnaissance de formes.
+\end{itemize}
+
+
+\subsection*{Cas automatique}
+\begin{itemize}
+	\item Se concentrer en premier lieu sur la détection de vertèbres pour la cardiomégalie (probablement la seule malformation qui sera traitée lors de ce P-Trans).
+	\item Si la détection de vertèbres est possible, alors essayer de détecter le coeur
+	\item Si les détections sont réussies, prendre les mesures sur le coeur et reporter les mesures sur les vertèbres 
+	\item Faire le calcul de l'indice et appliquer le diagnostic en prenant en compte la race de l'animal. 
+\end{itemize}
+
+
+\subsection*{Cas semi-automatique}
+Le vétérinaire prendrait alors les mesures sur le coeur lui-même et l'IA ferait le reste du diagnostic. Les objectifs sont donc :
+\begin{itemize}
+	\item Se renseigner sur les technologies existantes pour la reconnaissance de formes, d'os, etc.
+	\item Se concentrer sur la détection de vertèbre 
+	\item Reporter ces mesures sur les vertèbres
+	\item Faire le calcul de l'indice et appliquer le diagnostic en prenant en compte la race de l'animal.  
+\end{itemize}
+
+
+\subsection*{Rencontres}
+\begin{itemize}
+	\item 23 Octobre : Début de la mise en place du Cahier des Charges
+	\item début Novembre : Finalisation du cahier des charges
+	\item mi-décembre: rapport itération 1
+	\item mi-janvier : rapport itération 2
+	\item mi-février : rapport itération 3 ( version alpha) 
+	\item mi-mars : rapport itération 4
+	\item mi-avril : rapport itération 5 
+	\item début mai : rapport itération 6 (version beta )
+	\item mi mai : Présentation version finale
+
+\end{itemize}
+
+\section*{Organisation du projet}
+\subsection*{MOA}	
+Olivier BROUARD
+
+\begin{itemize}
+\item Rôle : Tuteur dans l'entreprise 
+\item Tél : 06 32 08 98 67 
+\item mail : obrouard@imedsys.fr
+\end{itemize}
+
+ 
+ Engagements :
+ \begin{itemize}
+\item Fournir des images de qualité suffisante pour du machine learning
+\item Accès a imedview
+ \end{itemize}
+
+\subsection*{MOE}
+Nicolas NORMAND
+
+\begin{itemize}
+\item Rôle : Tuteur Enseignant
+\item mail : nicolas.normand@univ-nantes.fr
+ \end{itemize}
+Anthony DOMEON
+
+\begin{itemize}
+\item Rôle : Développeur
+\item mail : anthony.domeon@etu.univ-nantes.fr
+\end{itemize}
+Théophane FOUILLARD
+
+\begin{itemize}
+\item Rôle : Développeur
+\item mail : theophane.fouillard@etu.univ-nantes.fr
+\end{itemize}
+François GENDRE
+
+\begin{itemize}
+\item Rôle : Chef de projet et développeur
+\item mail : francois.gendre@etu.univ-nantes.fr
+\end{itemize}
+Engagements :
+
+\begin{itemize}
+	\item Fournir un compte rendu hebdomadaire du travail effectué pendant les sprints
+	\item Assiduité aux réunions
+	\item Transparence en cas de difficulté / blocage
+	\item Rendre un travail documenté et maintenable dans la mesure du possible
+
+\end{itemize}
+
+\section*{Pistes de réflexions}
+La détection des organes (coeur, vertèbres etc) ainsi que de toutes les informations spatiales données par la radio se feront à l'aide d'une IA.\\
+La première technologie retenue lors de la réunion est celle de la croissance de région pour la détection des organes.
+Entraîner l'IA à prendre les mesures implique une segmentation des radios.\\
+Or, il n'y a pas de base de données (BDD) de radiographies segmentées (du c\oe{}ur par exemple), même si une petite partie a été faite à la main par un employé d'ImedSys.\\
+La majeure partie de la BDD n'est pas annotée, et on ne peut l'annoter nous-même, ou bien cela devrait être validé par des vétérinaires. Tout cela implique donc une difficulté d'apprentissage.\\
+Nous pourrions nous servir de BDD existantes identiques ou éloignées par rapport à la BDD d'Imedsys, afin d'entrainer une IA sur des données déjà segmentées.
+Cela implique qu'il faut une disponibilité de données.\\
+En raison de ces difficultés, on peut émettre l'éventualité de passer d'un format entièrement automatique à semi-automatique.
+
+\section*{Hexamètre Quintilien}
+\subsection*{Qui ?} 
+Le maître d’ouvrage : Olivier Brouard, employé de chez ImedSys.
+Il nous donne accès au logiciel et aux ressources du logiciel Imedview.
+Le maître d’oeuvre: Nicolas Normand est le tuteur enseignant.
+François Gendre est le chef de projet.
+Anthony Domeon et Théophane Fouillard sont les deux membres du projet.
+
+\subsection*{Quoi ?}
+Permettre l’automatisation des diagnostics de la cardiomégalie et de la dysplasie via une intelligence artificielle de reconnaissance de formes.
+
+\subsection*{Comment ?}
+L’IA devra assimiler de la connaissance, via une base de données prédéfinie, afin de détecter sur une image radio les vertèbres et le coeur de l’animal à analyser. La détection de ces zones, nous permettront de prendre des mesures sur le c\oe{}ur et les vertèbres pour conclure si l’animal présente des risques de cardiomégalie.
+Si l’analyse du coeur et des vertèbres de l’animal s'avère être trop complexe, nous peut envisager d'entraîner l'intelligence artificielle seulement sur les vertèbres et de laisser le vétérinaire faire les mesures au niveau du coeur.
+
+\subsection*{Pourquoi ?}
+Etablir le plus rapidement possible un diagnostic de la cardiomégalie sur un animal.
+
+\subsection*{Quand  ?}
+cf planning
+
+
+\subsection*{Où ?}
+Dans les locaux de polytech majoritairement, ou en distanciel selon les conditions sanitaires
+
+\vspace*{5cm}
+
+
+\begin{center}
+Signature du client \hspace{2.5cm} Signature du chef de projet
+\end{center}
+
+\end{document}

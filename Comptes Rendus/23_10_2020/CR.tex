@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+
+\title{Compte Rendu réunion PTrans}
+\date{23 Octobre 2020}
+\author{Personnes présentes : Olivier Brouard, Nicolas Normand,\\ Anthony Domeon, Théophane Fouillard, François Gendre}
+
+\begin{document}
+
+\maketitle
+\section*{Nombre d’images nécessaires pour entraîner une IA :}
+	300 images peuvent suffire, mais cela dépend vraiment de la tâche à effectuer. Très empirique.
+
+\section*{Annotation des radios :	}
+	Annoter de la même façon que sur le logiciel (points de mesure). L’IA n’aura pas nécessairement besoin de détecter l’organe mais plutôt les points de mesure.
+
+\section*{}
+La MOA a proposé de vérifier la library utilisée par l’ancien ETN5 (stage en Python, probablement avec tensor flow mais à  confirmer). Nous pourrons éventuellement nous inspirer de son code pour quelques parties, notamment le Réseau de Neurones Convolutifs UNet.
+
+\section*{Segmentation}
+Explorer la solution “Atlas anatomique” pour segmenter les radios. L’atlas anatomique permettrait de rechercher une transformation afin de mettre en correspondance l’atlas avec l’image à analyser. 
+Continuer à explorer la solution de ”croissance de régions”, évoquée lors de la dernière réunion. 
+
+\section*{Ordre de développement}
+La détection des vertèbres est la priorité numéro 1. Se fait par atlas ou croissance de région.  Ne pas oublier que pour compter les vertèbres, il ne s’agit pas de mesure métrique, mais bien de pourcentage de vertèbre (5,7 = 5 vertèbres entières + 70\% de la vertèbre suivante).\\
+Dans un premier temps, être capable d’effectuer “automatiquement” un diagnostic une fois les vertèbres comptées.\\
+Deuxième phase, trouver T4.\\
+Puis, intégrer la fonctionnalité de modification de points de mesure par l’utilisateur.\\
+Enfin, placer les points de mesure sur le coeur. 
+
+\section*{}
+Critère de performance idéal (non définitif) : 5 secondes maximum.\\
+Donner un indice de confiance lors de l’affichage du résultat.\\
+Regarder de notre côté à partir de quel pourcentage de réussite une IA peut être commercialisée dans le domaine médical.
+
+\section*{}
+La MOA a annoncé regarder s’il y avait une base de données de variance d’indice de Buchanan selon l’animal et la race de chien
+
+
+\section*{Gestion de projet :}
+Évaluer la significativité de Slack, Discord ou encore Mattermost (univ) pour la gestion de projet. 
+Utiliser Trello, ou un GANTT modulable ou les deux?
+
+\section*{Gestion de git :}
+Bien penser à ne pas push des fichiers inutiles ou statiques (.dvi, .log ou les pdf et autres images). Passer par le dvi n’est plus une méthode utilisée, préférer le latextopdf
+
+\section*{}
+Se renseigner sur la courbe ROC, un outil de mesure de performance d’un classificateur.
+Voir plus en profondeur le réseau UNet.
+
+\end{document}

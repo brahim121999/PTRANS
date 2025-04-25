@@ -62,25 +62,10 @@ Solution envisagée : utilisation de **PyTorch C++ API** ou autres techniques de
 
 | Mesure                 | État d’avancement                            |
 |------------------------|----------------------------------------------|
-| **Cardiomégalie**      | 🟢 Codage U-NET, calcul Buchanan, test IA     |
-| **Dysplasie**          | 🔴 Non abordée pour l’instant                |
+| **Cardiomégalie**      | 🟢 Codage U-NET, calcul Buchanan, test IA    |
+| **Dysplasie**          | 🔴 Non abordée                               |
 | **Plateau tibial**     | 🔴 Non abordé                                |
 
----
-
-## 🔁 Prochaines itérations
-
-### 🧪 Itération 1 : Cardiomégalie
-- Enrichissement du dataset
-- Entraînement de l’IA + ajustement des paramètres
-- Calcul d’un indice de confiance
-
-### ⚙️ Itération 2 : Intégration C++/Python
-- Lecture du code C++ d’IMEDVIEW
-- Recherche de solutions d’interfaçage
-- Implémentation et test
-
----
 
 ## 💬 Remarques
 
